@@ -1,0 +1,96 @@
+/* General styling for the page */
+body {
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    color: #333;
+}
+
+/* Container for the table to limit its width and center it */
+.table-container {
+    max-width: 80%; /* Adjusted to 4/5ths of the page width */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.3); /* Increased transparency */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the books table */
+.books-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent table background */
+}
+
+/* Table headers */
+.books-table th {
+    background-color: rgba(76, 175, 80, 0.7); /* Slightly transparent green */
+    color: white;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5); /* Light border with some transparency */
+}
+
+/* Table rows */
+.books-table td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* Light border with some transparency */
+}
+
+/* Alternating row colors */
+.books-table tr:nth-child(even) {
+    background-color: rgba(240, 240, 240, 0.5); /* Light grey with more transparency */
+}
+
+.books-table tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.3); /* White with more transparency */
+}
+
+/* Hover effect for rows */
+.books-table tr:hover {
+    background-color: rgba(230, 230, 230, 0.7); /* Slightly darker grey on hover */
+}
+
+/* Links in the table */
+.books-table a {
+    color: #2a7ae2;
+    text-decoration: none;
+}
+
+.books-table a:hover {
+    text-decoration: underline;
+}
+
+/* Checkbox styling */
+.books-table input[type="checkbox"] {
+    transform: scale(1.2); /* Make checkboxes slightly larger */
+    cursor: pointer; /* Indicate they are not interactive */
+}
+
+/* Additional styling for the table container */
+.library-heading {
+    text-align: center;
+    margin: 20px 0 20px 0;
+    color: #ff546c;
+}
+
+.button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #0056b3;
+}

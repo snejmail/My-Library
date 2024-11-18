@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+<div class="choose-reading-list-container">
+    <h1 class="choose-reading-list-heading">Select a Reading List</h1>
+
+    {% if error_message %}
+        <p class="error">{{ error_message }}</p>
+    {% endif %}
+
+    <form method="post" action="{% url 'choose_reading_list' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="reading_list" class="reading-list-label">Choose a Reading List:</label>
+            <select name="reading_list" required id="reading_list" class="reading-list-select">
+                {% for reading_list in reading_lists %}
+                    <option value="{{ reading_list.id }}">{{ reading_list.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="btn-container">
+            <button type="submit" class="btn btn-primary">Add Books to List</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

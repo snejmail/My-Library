@@ -1,0 +1,13 @@
+@import "home.css";
+@import "login.css";
+@import "register.css";
+@import "logout.css";
+@import "books.css";
+@import "my_reading_lists.css";
+@import "create_reading_list.css";
+@import "choose_reading_list.css";
+@import "edit_reading_list.css";
+@import "delete_reading_list.css";
+@import "details_profile.css";
+@import "delete_profile.css";
+@import "update_profile.css";

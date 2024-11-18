@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+    <div class="create-reading-list-container">
+        <h1 class="create-reading-list-title">Create a New reading List</h1>
+        <form method="post" class="create-reading-list-form">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <div class="btn-container">
+                <button type="submit" class="btn btn-primary">Create Reading List</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

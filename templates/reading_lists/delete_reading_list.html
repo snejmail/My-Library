@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+    <div class="delete-reading-list-container">
+        <h1 class="delete-reading-list-heading">Are you sure you want to delete "{{ object.name }}"?</h1>
+        
+        <form method="post" class="delete-reading-list-form">
+            {% csrf_token %}
+            <div class="btn-container">
+                <button type="submit" class="btn-primary">Yes, delete</button>
+                <a href="{% url 'reading_lists' %}" class="btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

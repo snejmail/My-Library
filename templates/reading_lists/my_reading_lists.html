@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+    <div class="my-reading-list-container">
+        <h1 class="my-reading-lists">My Reading Lists</h1>
+        <div class="btn-container">
+            <a href="{% url 'create_reading_list' %}" class="btn btn-primary">Create New List</a>
+        </div>
+        <ul class="reading-list">
+            {% for reading_list in reading_lists %}
+            <li class="reading-list-item">
+                <a href="{% url 'edit_reading_list' reading_list.id %}" class="reading-list-link">{{ reading_list.name }}</a>
+                <span class="book-count">({{ reading_list.books.count }} books)</span>
+                <a href="{% url 'delete_reading_list' reading_list.id %}" class="btn btn-danger">Delete</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

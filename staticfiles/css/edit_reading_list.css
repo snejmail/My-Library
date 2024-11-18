@@ -1,0 +1,81 @@
+/* Container for the edit reading list page */
+.edit-reading-list-container {
+    margin: 50px auto 20px auto;
+    max-width: 600px;
+    padding: 30px 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styles */
+.edit-reading-list-heading {
+    color: #ff546c;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+/* Form group for layout */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+/* General input and select styling */
+.edit-reading-list-container input,
+.edit-reading-list-container select,
+.edit-reading-list-container textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Specific textarea (description) styling to reduce height */
+.edit-reading-list-container textarea {
+    height: 100px; /* Adjust this value for the desired height */
+    resize: vertical; /* Allow users to resize the textarea vertically */
+}
+
+/* Books list styling */
+.books-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+    max-height: 200px; /* Limit height if there are many books */
+    overflow-y: auto; /* Add scroll if needed */
+}
+
+/* Book item styling */
+.book-item {
+    padding: 1px;
+    margin-bottom: 10px;
+}
+
+/* Center the button */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #ff546c;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e13f56;
+}

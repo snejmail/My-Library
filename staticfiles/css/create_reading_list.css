@@ -1,0 +1,70 @@
+/* Specific styles for the Create Reading List page */
+.create-reading-list-container {
+    max-width: 600px;
+    margin: 50px auto; /* Center the container and give it some top margin */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for form contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+    background-color: rgba(255, 255, 255, 0.3); /* Increased transparency */
+
+}
+
+.create-reading-list-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #ff546c; /* Same red color as other headings for consistency */
+    margin-bottom: 30px;
+}
+
+.create-reading-list-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form fields */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.create-reading-list-form input,
+.create-reading-list-form select,
+.create-reading-list-form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+}
+
+.create-reading-list-form textarea {
+    max-height: 100px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center; /* Center the button */
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background-color: #ff546c; /* Same red as the heading */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #e04b61; /* Darken button on hover */
+}

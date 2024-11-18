@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+    <h1 class="library-heading">Library</h1>
+
+    <div class="table-container">
+        <form id="booksForm" method="post" action="{% url 'select_books' %}"> <!-- Changed the form action to select_books -->
+            {% csrf_token %}
+            <table class="books-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Genre</th>
+                        <th>Select</th> <!-- Changed 'Status' to 'Select' to clarify the checkbox purpose -->
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for book in books %}
+                        <tr>
+                            <td><a href="{% url 'book_detail' book.id %}">{{ book.title }}</a></td>
+                            <td>{{ book.author }}</td>
+                            <td>{{ book.genre }}</td>
+                            <td>
+                                <input type="checkbox" name="books" value="{{ book.id }}"> <!-- No need for JS to handle book selection -->
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </form>
+    </div>
+
+    <div class="button-container">
+        <button type="submit" form="booksForm">Choose Reading List</button> <!-- Moves the form submission button outside the form -->
+    </div>
+
+{% endblock %}
