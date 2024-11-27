@@ -1,6 +1,5 @@
 from django import forms
 
-from Books.models import Book
 from ReadingLists.models import ReadingList
 
 

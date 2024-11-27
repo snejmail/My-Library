@@ -1,21 +1,31 @@
-import json
-
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse
-from django.shortcuts import render, redirect, get_object_or_404
-from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import redirect, get_object_or_404
 from django.views.decorators.http import require_POST
 from django.views.generic import ListView, DetailView, UpdateView
 
 from Books.models import Book
-from ReadingLists.models import ReadingListEntry, ReadingList
+from ReadingLists.models import ReadingList
 
 
 class BooksView(LoginRequiredMixin, ListView):
     model = Book
     template_name = 'books/books.html'
     context_object_name = 'books'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        sort_by = self.request.GET.get('user_sort_by', 'title')
+        order = self.request.GET.get('user_order', 'asc')
+
+        if sort_by == 'title':
+            queryset = queryset.order_by('title' if order=='asc' else '-title')
+        elif sort_by == 'author':
+            queryset = queryset.order_by('author' if order == 'asc' else '-author')
+        elif sort_by == 'genre':
+            queryset = queryset.order_by('genre' if order == 'asc' else '-genre')
+
+        return queryset
 
 
 class BookDetailView(LoginRequiredMixin, DetailView):
@@ -35,7 +45,7 @@ class UpdateBooksStatusView(LoginRequiredMixin, UpdateView):
 @require_POST
 def update_read_status(request, book_id):
     book = get_object_or_404(Book, id=book_id)
-    is_read = request.POST.get('is_read') == 'true'  # Properly parse the 'true'/'false' value
+    is_read = request.POST.get('is_read') == 'true'
 
     book.is_read = is_read
     book.save()
@@ -57,10 +67,3 @@ def update_read_status(request, book_id):
 
     return JsonResponse({'success': True})
 
-
-@login_required
-def select_books(request):
-    if request.method == 'POST':
-        selected_books = request.POST.getlist('books')
-        request.session['selected_books'] = selected_books
-        return redirect('choose_reading_list')

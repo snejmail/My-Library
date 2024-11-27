@@ -1,5 +1,4 @@
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.db import transaction
@@ -26,7 +25,7 @@ class UserRegisterView(views.CreateView):
 
     @transaction.atomic
     def form_valid(self, form):
-        response = super().form_valid(form)  # Ensure parent behavior is maintained
+        response = super().form_valid(form)
         messages.success(self.request, 'Account was created for ' + self.object.username)
         ReadingList.objects.create(name="Read books", user=self.object)
         return redirect(self.get_success_url())
@@ -45,7 +44,6 @@ class CustomLoginView(auth_views.LoginView):
 
 
 class UserLogoutView(auth_views.LogoutView):
-    # next_page = reverse_lazy('login_user')
     template_name = 'users/logged_out.html'
 
     def dispatch(self, request, *args, **kwargs):

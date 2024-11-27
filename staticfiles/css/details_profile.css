@@ -1,62 +1,52 @@
-/* Add this to your main CSS file or a dedicated CSS file */
-
-/* Styling for the form card */
 .form-card {
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    background: rgba(255, 255, 255, 0.8);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    margin-top: 50px; /* Add some top margin to center vertically */
+    margin-top: 50px;
 }
 
-/* Heading styles within the form card */
 .form-card h2 {
     margin-bottom: 20px;
     text-align: center;
-; /* Original red color */
 }
 
-/* Paragraph styling within the form card */
 .form-card p {
     margin-bottom: 20px;
     font-size: 1.2rem;
     color: #333;
 }
 
-/* Button styles within the form card */
 .form-card .btn {
-    display: inline-block; /* Ensure buttons are aligned */
-    padding: 10px 20px; /* Consistent padding */
+    display: inline-block;
+    padding: 10px 20px;
     border-radius: 5px;
     text-align: center;
     font-size: 1rem;
-    text-decoration: none; /* Remove underline from links */
-    transition: background-color 0.3s ease; /* Smooth background color transition */
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
-/* Primary button styling */
 .btn-primary {
-    background-color: #ff546c; /* Original red color */
+    background-color: #ff546c;
     color: #fff;
     border: none;
 }
 
 .btn-primary:hover {
-    background-color: #e13f56; /* Slightly darker red for hover effect */
+    background-color: #e13f56;
 }
 
-/* Danger button styling */
 .btn-danger {
-    background-color: #dc3545; /* Red color */
+    background-color: #dc3545;
     color: #fff;
     border: none;
 }
 
 .btn-danger:hover {
-    background-color: #c82333; /* Slightly darker red for hover effect */
+    background-color: #c82333;
 }
 
-/* Optional: Responsive design for smaller screens */
 @media (max-width: 768px) {
     .form-card {
         padding: 20px;

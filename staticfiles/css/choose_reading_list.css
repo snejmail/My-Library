@@ -1,61 +1,54 @@
-/* Container for the choose reading list page */
 .choose-reading-list-container {
     margin-top: 50px;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    padding: 30px 20px;  /* Increased padding to make the form taller */
-    background-color: rgba(255, 255, 255, 0.3); /* Increased transparency */
+    padding: 30px 20px;
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Heading styles */
 .choose-reading-list-heading {
-    color: #ff546c; /* Original red color */
+    color: #ff546c;
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 40px;  /* Increased margin for extra spacing */
+    margin-bottom: 40px;
 }
 
-/* Form group to structure label and select */
 .form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 50px;  /* Increased margin for spacing */
+    margin-bottom: 50px;
 }
 
-/* Label styling */
 .reading-list-label {
     font-size: 1.2rem;
-    margin-bottom: 15px;  /* Slightly increased spacing under the label */
+    margin-bottom: 15px;
     color: #333;
 }
 
-/* Select dropdown styling */
 .reading-list-select {
-    padding: 10px;  /* Increased padding to make the select box taller */
+    padding: 10px;
     margin-top: 20px;
     font-size: 1rem;
     border-radius: 5px;
     border: 1px solid #ccc;
-    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
-    width: 100%; /* Ensure select list doesn't take the entire page width */
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
 }
 
-/* Center the button */
 .btn-container {
     display: flex;
     justify-content: center;
-    margin-top: 30px;  /* Increased margin above the button */
+    margin-top: 30px;
 }
 
-/* Button styles */
 .btn-primary {
-    background-color: #ff546c; /* Original red color */
+    background-color: #ff546c;
     color: #fff;
     border: none;
-    padding: 12px 25px;  /* Slightly increased padding for a larger button */
+    padding: 12px 25px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
@@ -65,3 +58,4 @@
 .btn-primary:hover {
     background-color: #e13f56;
 }
+

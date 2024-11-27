@@ -1,58 +1,90 @@
-/* General styling for the page */
 body {
     font-family: Arial, sans-serif;
     background-size: cover;
     background-position: center;
-    color: #333;
 }
 
-/* Container for the table to limit its width and center it */
+.library-heading {
+    text-align: center;
+    margin: 20px 0;
+    color: #ff546c;
+}
+
+.sorting-container {
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 15px;
+    /*background-color: white;*/
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sort-form {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sort-form label {
+    font-weight: bold;
+    color: #8fff1b;
+    font-size: 25px;
+    min-width: 100px;
+}
+
+.sort-form select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    min-width: 120px;
+}
+
+.sort-form label + select {
+    margin-left: 15px;
+}
+
 .table-container {
-    max-width: 80%; /* Adjusted to 4/5ths of the page width */
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.3); /* Increased transparency */
+    max-width: 80%;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling for the books table */
 .books-table {
     width: 100%;
     border-collapse: collapse;
-    background-color: rgba(255, 255, 255, 0.2); /* Transparent table background */
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Table headers */
 .books-table th {
-    background-color: rgba(76, 175, 80, 0.7); /* Slightly transparent green */
+    background-color: rgba(76, 175, 80, 0.7);
     color: white;
     padding: 10px;
     text-align: left;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.5); /* Light border with some transparency */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
 
-/* Table rows */
 .books-table td {
     padding: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* Light border with some transparency */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-/* Alternating row colors */
 .books-table tr:nth-child(even) {
-    background-color: rgba(240, 240, 240, 0.5); /* Light grey with more transparency */
+    background-color: rgba(240, 240, 240, 0.5);
 }
 
 .books-table tr:nth-child(odd) {
-    background-color: rgba(255, 255, 255, 0.3); /* White with more transparency */
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Hover effect for rows */
 .books-table tr:hover {
-    background-color: rgba(230, 230, 230, 0.7); /* Slightly darker grey on hover */
+    background-color: rgba(230, 230, 230, 0.7);
 }
 
-/* Links in the table */
 .books-table a {
     color: #2a7ae2;
     text-decoration: none;
@@ -62,26 +94,21 @@ body {
     text-decoration: underline;
 }
 
-/* Checkbox styling */
 .books-table input[type="checkbox"] {
-    transform: scale(1.2); /* Make checkboxes slightly larger */
-    cursor: pointer; /* Indicate they are not interactive */
-}
-
-/* Additional styling for the table container */
-.library-heading {
-    text-align: center;
-    margin: 20px 0 20px 0;
-    color: #ff546c;
+    transform: scale(1.2);
+    cursor: pointer;
 }
 
 .button-container {
-    text-align: center;
-    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .button-container button {
     padding: 10px 20px;
+    margin: 0;
     font-size: 16px;
     background-color: #007bff;
     color: white;
@@ -93,4 +120,17 @@ body {
 
 .button-container button:hover {
     background-color: #0056b3;
+}
+
+.button-container .btn-darkgreen {
+    background-color: green;
+}
+
+.button-container .btn-darkgreen:hover {
+    background-color: darkgreen;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
 }

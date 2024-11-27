@@ -2,9 +2,30 @@
 
 {% block page_content %}
     <h1 class="library-heading">Library</h1>
+    
+    <div class="sorting-container mb-3 align-items-center">
+    <form method="get" class="sort-form">
+        <label for="user_sort_by" class="mr-2">Sort by:</label>
+        <select name="user_sort_by" id="user_sort_by" class="form-control mr-3" onchange="this.form.submit()">
+            <option value="title" {% if request.GET.user_sort_by == 'title' %}selected{% endif %}>Title</option>
+            <option value="author" {% if request.GET.user_sort_by == 'author' %}selected{% endif %}>Author</option>
+            <option value="genre" {% if request.GET.user_sort_by == 'genre' %}selected{% endif %}>Genre</option>
+        </select>
+
+        <label for="user_order" class="mr-2">Order:</label>
+        <select name="user_order" id="user_order" class="form-control mr-3" onchange="this.form.submit()">
+            <option value="asc" {% if request.GET.user_order == 'asc' %}selected{% endif %}>Ascending</option>
+            <option value="desc" {% if request.GET.user_order == 'desc' %}selected{% endif %}>Descending</option>
+        </select>
+    </form>
+    </div>  
+
+    {% if error_message %}
+        <div class="error-message">{{ error_message }}</div>
+    {% endif %}
 
     <div class="table-container">
-        <form id="booksForm" method="post" action="{% url 'select_books' %}"> <!-- Changed the form action to select_books -->
+        <form method="post" action="{% url 'select_reading_list' %}">
             {% csrf_token %}
             <table class="books-table">
                 <thead>
@@ -12,7 +33,7 @@
                         <th>Title</th>
                         <th>Author</th>
                         <th>Genre</th>
-                        <th>Select</th> <!-- Changed 'Status' to 'Select' to clarify the checkbox purpose -->
+                        <th>Select</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -22,17 +43,17 @@
                             <td>{{ book.author }}</td>
                             <td>{{ book.genre }}</td>
                             <td>
-                                <input type="checkbox" name="books" value="{{ book.id }}"> <!-- No need for JS to handle book selection -->
+                                <input type="checkbox" name="books" value="{{ book.id }}">
                             </td>
                         </tr>
                     {% endfor %}
                 </tbody>
             </table>
-        </form>
-    </div>
 
-    <div class="button-container">
-        <button type="submit" form="booksForm">Choose Reading List</button> <!-- Moves the form submission button outside the form -->
+            <div class="button-container">
+                <button type="submit" class="btn-darkgreen">Add Selected Books</button> 
+            </div>
+        </form>
     </div>
 
 {% endblock %}

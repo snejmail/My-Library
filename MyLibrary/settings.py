@@ -144,3 +144,6 @@ AUTHENTICATION_BACKENDS = (
 )
 
 AUTH_USER_MODEL = 'Users.User'
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+

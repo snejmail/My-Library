@@ -8,7 +8,6 @@
             {% csrf_token %}
             {{ form.as_p }}
 
-            <!-- New Field for displaying books -->
             <div class="form-group">
                 <label for="books">Books in this list:</label>
                 <ul class="books-list">
@@ -21,8 +20,9 @@
                     {% endfor %}
                 </ul>
             </div>
-
+            
             <div class="btn-container">
+                <a href="{% url 'books' %}" class="btn-add-books">Choose Books</a>
                 <button type="submit" class="btn-primary">Save Changes</button>
             </div>
         </form>

@@ -1,17 +1,16 @@
-/* Styles specific to the profile update page */
 .profile-update-container {
     display: flex;
     justify-content: center;
-    margin-top: 50px; /* Adjust as needed */
+    margin-top: 50px;
 }
 
 .profile-update-card {
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    background: rgba(255, 255, 255, 0.8);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Make sure the card doesn't exceed container width */
-    max-width: 600px; /* Limit maximum width */
+    width: 100%;
+    max-width: 600px;
 }
 
 .profile-update-card h2 {
@@ -24,16 +23,16 @@
 }
 
 .profile-update-form .form-row {
-    margin-bottom: 15px; /* Space between form fields */
+    margin-bottom: 15px;
 }
 
 .profile-update-form .form-row label {
-    display: block; /* Ensure labels are block-level to align correctly */
+    display: block;
     margin-bottom: 5px;
 }
 
 .profile-update-form .form-row input {
-    width: 100%; /* Ensure input fields take the full width of the container */
+    width: 100%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -45,7 +44,7 @@
 }
 
 .profile-update-form .btn-primary {
-    background-color: #ff546c; /* Original red color */
+    background-color: #ff546c;
     color: #fff;
     border: none;
     padding: 10px 20px;

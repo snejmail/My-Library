@@ -1,11 +1,9 @@
-/* Add this to your main CSS file or a dedicated CSS file */
-
 .form-card {
-    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    background: rgba(255, 255, 255, 0.8);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    margin-top: 50px; /* Add some top margin to center vertically */
+    margin-top: 50px;
 }
 
 .form-card h2 {
@@ -21,10 +19,9 @@
 }
 
 .form-card .btn {
-    margin: 5px; /* Add some space between the buttons */
+    margin: 5px;
 }
 
-/* Optional: Responsive design for smaller screens */
 @media (max-width: 768px) {
     .form-card {
         padding: 20px;
