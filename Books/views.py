@@ -1,10 +1,11 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse
-from django.shortcuts import redirect, get_object_or_404
+from django.shortcuts import redirect, get_object_or_404, render
 from django.views.decorators.http import require_POST
 from django.views.generic import ListView, DetailView, UpdateView
 
 from Books.models import Book
+from Books.utils import get_sorted_books
 from ReadingLists.models import ReadingList
 
 
@@ -14,18 +15,7 @@ class BooksView(LoginRequiredMixin, ListView):
     context_object_name = 'books'
 
     def get_queryset(self):
-        queryset = super().get_queryset()
-        sort_by = self.request.GET.get('user_sort_by', 'title')
-        order = self.request.GET.get('user_order', 'asc')
-
-        if sort_by == 'title':
-            queryset = queryset.order_by('title' if order=='asc' else '-title')
-        elif sort_by == 'author':
-            queryset = queryset.order_by('author' if order == 'asc' else '-author')
-        elif sort_by == 'genre':
-            queryset = queryset.order_by('genre' if order == 'asc' else '-genre')
-
-        return queryset
+        return get_sorted_books(self.request)
 
 
 class BookDetailView(LoginRequiredMixin, DetailView):
@@ -67,3 +57,9 @@ def update_read_status(request, book_id):
 
     return JsonResponse({'success': True})
 
+
+def library_view(request):
+    books = get_sorted_books(request)
+    return render(request, 'books/library_view.html',
+                  {'books': books}
+                  )

@@ -17,6 +17,10 @@ def home(request):
     return render(request, 'home.html')
 
 
+def library(request):
+    return render(request, 'books/library_view.html')
+
+
 class UserRegisterView(views.CreateView):
     model = User
     template_name = 'users/register.html'
@@ -37,7 +41,6 @@ class CustomLoginView(auth_views.LoginView):
     template_name = 'users/login.html'
     authentication_form = UserLoginForm
     redirect_authenticated_user = True
-    success_url = reverse_lazy('home')
 
     def get_success_url(self):
         return reverse_lazy('home')
@@ -52,7 +55,7 @@ class UserLogoutView(auth_views.LogoutView):
         return response
 
 
-class UserUpdateView(views.UpdateView):
+class UserUpdateView(LoginRequiredMixin, views.UpdateView):
     model = User
     template_name = 'users/update_profile.html'
     form_class = UserUpdateForm
